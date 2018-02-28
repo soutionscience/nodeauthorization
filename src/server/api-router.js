@@ -43,6 +43,7 @@ router.use(function(err, req, res , next){
     console.log("hitting auth route")
     const user = req.body;
     const userCollection = database.collection('users');
+   
     userCollection
       .findOne({ username: user.username }, function (err, result) {
         if (!result) {
